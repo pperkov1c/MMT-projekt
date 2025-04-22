@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Petrin drugi izbor - rukomet">
+  <title>Rukomet - Petrin drugi izbor</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      border: 4px solid white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🤾‍♀️ Rukomet</div>
+    <nav>
+      <a href="index.html">Naslovna</a>
+      <a href="kosarka.html">Ivanin izbor</a>
+      <a href="rukomet.html" class="active">Petrin izbor</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Petrin drugi sport - Rukomet</h1>
+    </section>
+
+    <section class="info">
+      <p>Rukomet je snažan i uzbudljiv sport. Petra je igrala rukomet u srednjoj školi i voli ga zbog tempa i fizičke zahtjevnosti.</p>
+      <p><a href="https://hr.wikipedia.org/wiki/Rukomet" target="_blank" rel="noopener noreferrer">Više o rukometu</a></p>
+      
+      <div class="media">
+        <img src="img/rukomet1.jpeg" alt="Rukometni stadion" loading="lazy" onclick="openImage(this.src)" />
+        <img src="img/rukomet2.jpeg" alt="Rukometna lopta" loading="lazy" onclick="openImage(this.src)" />
+      </div>
+    </section>
+
+    <section class="audio-video">
+      <h2>Zvuk i video</h2>
+      <audio controls>
+        <source src="img/handball sound.mp3" type="audio/mpeg">
+        Tvoj preglednik ne podržava audio element.
+      </audio>
+
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/GqcFHXEV2pI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ivana i Petra | Omiljeni sport</p>
+  </footer>
+
+  <!-- Modal za slike -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Povećana slika" />
+  </div>
+
+  <script>
+    function openImage(src) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      modal.style.display = 'flex';
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

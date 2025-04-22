@@ -1,0 +1,181 @@
+/* Reset i osnove */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.info p {
+  margin-bottom: 20px;
+}
+
+.student-response p {
+  margin-bottom: 24px;
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fa;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #002e5d;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #0059b3;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.media img {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  border: 2px solid #ddd;
+}
+
+.media img:hover {
+  transform: scale(1.05);
+}
+
+.audio-video {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+audio, video {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.students {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.student img {
+  width: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #444;
+  transition: transform 0.2s;
+}
+
+.student img:hover {
+  transform: scale(1.1);
+}
+
+.student p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.personal-answers {
+  margin-top: 2rem;
+}
+
+.info-note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer {
+  background-color: #002e5d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Modal za slike */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  border: 4px solid white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .students {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .media img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
