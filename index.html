@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Web stranica o omiljenom sportu nogometu, s dodatnim sportovima košarkom i rukometom." />
+  <title>Omiljeni Sport</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Dodatni stilovi za modal i personal-answers */
+
+    /* Modal za studente */
+    .student-info {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      color: #222;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .student-info ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+
+    .student-info ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .student-info ul li a {
+      color: #0059b3;
+      text-decoration: none;
+    }
+
+    .student-info ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .student-info button {
+      margin-top: 1rem;
+      padding: 8px 16px;
+      background-color: #002e5d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .student-info button:hover {
+      background-color: #0059b3;
+    }
+
+    /* Personal answers styling */
+    .personal-answers .answer {
+      background-color: #e3f2fd;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .personal-answers .answer h3 {
+      color: #0d47a1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Modal display flex */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">⚽ Omiljeni sport</div>
+    <nav>
+      <a href="index.html" class="active">Naslovna</a>
+      <a href="kosarka.html">Ivanin drugi izbor</a>
+      <a href="rukomet.html">Petrin drugi izbor</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Dobrodošli u svijet nogometa</h1>
+      <p>Nogomet je naš omiljeni sport – strast, timski rad i emocije!</p>
+    </section>
+
+    <section class="info">
+      <h2>Zašto volimo nogomet?</h2>
+      <p>Nogomet je timska igra koja zahtijeva strategiju, kondiciju i dobru koordinaciju. Omiljen je diljem svijeta i okuplja ljude svih uzrasta.</p>
+      <p><strong>Pravila igre:</strong> Dvije ekipe po 11 igrača, cilj je postići više pogodaka od protivnika u 90 minuta.</p>
+      <p><a href="https://hr.wikipedia.org/wiki/Nogomet" target="_blank" rel="noopener noreferrer">Saznaj više o pravilima nogometa</a></p>
+    </section>
+
+    <section class="media">
+      <img src="img/nogomet1.jpeg" alt="Nogomet igrači" loading="lazy" onclick="openImage(this.src)" />
+      <img src="img/nogomet2.png" alt="Nogomet lopta" loading="lazy" onclick="openImage(this.src)" />
+      <img src="img/nogomet3.gif" alt="Animacija nogometa" loading="lazy" onclick="openImage(this.src)" />
+      <img src="img/nogomet4.bmp" alt="Nogometni stadion" loading="lazy" onclick="openImage(this.src)" />
+    </section>
+
+    <section class="audio-video">
+      <h2>Zvuk i video</h2>
+      <audio controls>
+        <source src="img/Pjesma.mp3" type="audio/mpeg">
+        Tvoj preglednik ne podržava audio element.
+      </audio>
+
+      <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/Rm61xFCy6TA"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+        </iframe>
+
+
+    <section class="students">
+      <h2>Autori</h2>
+      <div class="student">
+        <img src="img/petra.jpg" alt="Petra" loading="lazy" onclick="openImage(this.src)">
+        <p><a href="#" onclick="showIvanaInfo(event)">Petra</a></p>
+      </div>
+      <div class="student">
+        <img src="img/ivana.jpg" alt="Ivana" loading="lazy" onclick="openImage(this.src)">
+        <p><a href="#" onclick="showPetraInfo(event)">Ivana</a></p>
+      </div>
+    </section>
+
+    <section class="personal-answers">
+      <h2>Bavim li se ovim sportom ili ga samo volim?</h2>
+      <div class="answer">
+
+        <h3>Ivana</h3>
+        <p>Igram nogomet rekreativno vikendom sa svojim prijateljima. Volim izazov i timsku igru!</p>
+      </div>
+      <div class="answer">
+        <h3>Petra</h3>
+        <p>Više volim gledati nogomet, posebno reprezentaciju na velikim natjecanjima. Prava strast!</p>
+      </div>
+    </section>
+
+    <section class="info-note">
+      <p>Ova stranica izrađena je za vrijeme pohađanja Fakulteta elektrotehnike, računarstva i informacijskih tehnologija u Osijeku u sklopu kolegija <strong>Multimedijska tehnika</strong>.</p>
+      <p>
+        <a href="https://www.ferit.unios.hr/" target="_blank" rel="noopener noreferrer">FERIT</a> 
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ivana i Petra | Omiljeni sport</p>
+  </footer>
+
+  <!-- Modal za slike -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Povećana slika" />
+  </div>
+
+  <!-- Modal za studente -->
+  <div id="studentModal" class="modal" onclick="closeStudentModal()">
+    <div class="student-info" onclick="event.stopPropagation()">
+      <h3 id="studentName"></h3>
+      <ul>
+        <li><a href="#" target="_blank" id="birthPlace"></a></li>
+        <li><a href="#" target="_blank" id="residence"></a></li>
+        <li><a href="#" target="_blank" id="primarySchool"></a></li>
+        <li><a href="#" target="_blank" id="highSchool"></a></li>
+        <li><a href="#" target="_blank" id="faculty"></a></li>
+      </ul>
+      <button onclick="closeStudentModal()">Zatvori</button>
+    </div>
+  </div>
+
+  <script>
+    // Otvaranje modala za slike
+    function openImage(src) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      modal.style.display = 'flex';
+      modalImg.src = src;
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+
+    // Otvaranje modala za informacije o Petri
+    function showIvanaInfo(event) {
+      event.preventDefault();
+      showStudentModal({
+        name: "Petra",
+        birthPlace: { text: "Mjesto rođenja: Pula", url: "https://www.pula.hr/hr/" },
+        residence: { text: "Stanovanje: Osijek", url: "https://www.osijek.hr/" },
+        primarySchool: { text: "Osnovna škola: OŠ Vjekoslav Klaić", url: "https://os-vklaic-garcin.skole.hr/?news_hk=1&news_id=607&mshow=1505" },
+        highSchool: { text: "Srednja škola: Ekonomsko-birotehnička škola, Slavonski Brod", url: "https://ss-ekonomsko-birotehnicka-sb.skole.hr" },
+        faculty: { text: "Fakultet: FERIT", url: "https://www.ferit.unios.hr/" }
+      });
+    }
+
+    // Otvaranje modala za informacije o Ivani
+    function showPetraInfo(event) {
+      event.preventDefault();
+      showStudentModal({
+        name: "Ivana",
+        birthPlace: { text: "Mjesto rođenja: Đakovo", url: "https://www.djakovo.hr" },
+        residence: { text: "Stanovanje: Osijek", url: "https://www.osijek.hr/" },
+        primarySchool: { text: "Osnovna škola: OŠ Ivan Goran Kovačić", url: "https://os-igkovacic-dj.skole.hr" },
+        highSchool: { text: "Srednja škola: Ekonomska škola Braća Radić, Đakovo", url: "https://ss-ekonomska-bracaradic-dj.skole.hr" },
+        faculty: { text: "Fakultet: FERIT", url: "https://www.ferit.unios.hr/" }
+      });
+    }
+
+    // Funkcija za prikaz modala studenta
+    function showStudentModal(data) {
+      const modal = document.getElementById('studentModal');
+      modal.style.display = 'flex';
+
+      document.getElementById('studentName').textContent = data.name;
+
+      const bp = document.getElementById('birthPlace');
+      bp.textContent = data.birthPlace.text;
+      bp.href = data.birthPlace.url;
+
+      const res = document.getElementById('residence');
+      res.textContent = data.residence.text;
+      res.href = data.residence.url;
+
+      const ps = document.getElementById('primarySchool');
+      ps.textContent = data.primarySchool.text;
+      ps.href = data.primarySchool.url;
+
+      const hs = document.getElementById('highSchool');
+      hs.textContent = data.highSchool.text;
+      hs.href = data.highSchool.url;
+
+      const fac = document.getElementById('faculty');
+      fac.textContent = data.faculty.text;
+      fac.href = data.faculty.url;
+    }
+
+    // Zatvaranje modala studenta
+    function closeStudentModal() {
+      document.getElementById('studentModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
